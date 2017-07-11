@@ -48,6 +48,10 @@
         1,
         null,
         null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/charlottefeather/Projects/bank-tech-test/spec/transactions_spec.rb": [
@@ -66,17 +70,24 @@
       ],
       "/Users/charlottefeather/Projects/bank-tech-test/lib/transactions.rb": [
         1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
         null,
         null,
         1,
-        1,
+        0,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1499775109
+    "timestamp": 1499785005
   }
 }

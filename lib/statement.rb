@@ -1,7 +1,7 @@
 class Statement
   def display(list_of_transactions, initial_balance)
     statement_text = "date || credit || debit || balance\n"
-    statement_text += statement_body(list_of_transactions,initial_balance)
+  p  statement_text += statement_body(list_of_transactions,initial_balance)
   end
 
 private
@@ -10,14 +10,14 @@ private
     previous_balance = initial_balance
     statement_text = ''
     list_of_transactions.each  do |transaction|
-      statement_text += statement_row(transaction, previous_balance)
+      statement_text += statement_row(transaction, previous_balance) + "\n"
       previous_balance += transaction[1]
     end
     statement_text
   end
 
   def statement_row(transaction, previous_balance)
-    [transaction[0].strftime('%x'),credit_or_debit_column(transaction[1]), "#{transaction[1] += previous_balance}.00"].join(' || ') +"\n"
+    [pretty_date(transaction[0]),credit_or_debit_column(transaction[1]), "#{transaction[1] += previous_balance}.00"].join(' || ')
   end
 
   def credit(value)
@@ -27,6 +27,10 @@ private
   def credit_or_debit_column(value)
     return "#{value}.00 ||" if credit(value)
      "|| #{-value}.00"
+  end
+
+  def pretty_date(date)
+    date.strftime('%x')
   end
 
 end
