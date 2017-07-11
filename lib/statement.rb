@@ -1,7 +1,7 @@
 class Statement
   def display(list_of_transactions, initial_balance)
-    statement_text = "date || credit || debit || balance\n"
-  p  statement_text += statement_body(list_of_transactions,initial_balance)
+    p statement_text = "date || credit || debit || balance"
+    statement_body(list_of_transactions,initial_balance)
   end
 
 private
@@ -10,7 +10,7 @@ private
     previous_balance = initial_balance
     statement_text = ''
     list_of_transactions.each  do |transaction|
-      statement_text += statement_row(transaction, previous_balance) + "\n"
+       p statement_text += statement_row(transaction, previous_balance)
       previous_balance += transaction[1]
     end
     statement_text
